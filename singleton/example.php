@@ -19,7 +19,7 @@ class Configuration {
     }
 }
 
-//Connection class to conect with database using singleton pattern
+//Connection class to connect with database using singleton pattern
 class Connection {
     private static $singleton;
     private PDO $pdo;

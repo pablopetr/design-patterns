@@ -2,8 +2,8 @@
 
 class Singleton {
     private static $singleton;
-
     public $x;
+
     private function __construct() {}
 
     public static function getInstance(): ?self {
