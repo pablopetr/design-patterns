@@ -1,45 +1,35 @@
 <?php
 
-interface Builder
-{
+interface Builder {
     public function producePartA(): void;
-
     public function producePartB(): void;
-
     public function producePartC(): void;
 }
 
-class ConcreteBuilder1 implements Builder
-{
+class ConcreteBuilder1 implements Builder {
     private $product;
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->reset();
     }
 
-    public function reset(): void
-    {
+    public function reset(): void {
         $this->product = new Product1();
     }
 
-    public function producePartA(): void
-    {
+    public function producePartA(): void {
         $this->product->parts[] = "PartA1";
     }
 
-    public function producePartB(): void
-    {
+    public function producePartB(): void {
         $this->product->parts[] = "PartB1";
     }
 
-    public function producePartC(): void
-    {
+    public function producePartC(): void {
         $this->product->parts[] = "PartC1";
     }
 
-    public function getProduct(): Product1
-    {
+    public function getProduct(): Product1 {
         $result = $this->product;
         $this->reset();
 
@@ -47,52 +37,45 @@ class ConcreteBuilder1 implements Builder
     }
 }
 
-class Product1
-{
+class Product1 {
     public $parts = [];
 
-    public function listParts(): void
-    {
-        echo "Product parts: " . implode(', ', $this->parts) . "\n\n";
+    public function listParts(): void {
+        echo "Product parts: " .implode(', ', $this->parts)."\n\n";
     }
 }
 
-class Director
-{
+class Director {
     private $builder;
 
-    public function setBuilder(Builder $builder): void
-    {
+    public function setBuilder(Builder $builder): void {
         $this->builder = $builder;
     }
 
-    public function buildMinimalViableProduct(): void
-    {
+    public function buildMinimalViableProduct(): void {
         $this->builder->producePartA();
     }
 
-    public function buildFullFeaturedProduct(): void
-    {
+    public function buildFullFeaturedProduct(): void {
         $this->builder->producePartA();
         $this->builder->producePartB();
         $this->builder->producePartC();
     }
 }
 
-function clientCode(Director $director)
-{
+function clientCode(Director $director) {
     $builder = new ConcreteBuilder1();
     $director->setBuilder($builder);
 
-    echo "Standard basic product:\n";
+    echo "Standard Basic Product: \n";
     $director->buildMinimalViableProduct();
     $builder->getProduct()->listParts();
 
-    echo "Standard full featured product:\n";
+    echo "Standard full Featured Product: \n";
     $director->buildFullFeaturedProduct();
     $builder->getProduct()->listParts();
 
-    echo "Custom product:\n";
+    echo "Custom Product: \n";
     $builder->producePartA();
     $builder->producePartC();
     $builder->getProduct()->listParts();
