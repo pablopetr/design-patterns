@@ -4,11 +4,11 @@
 Example with implementation of the 23 main design patterns in PHP 8
 
 ## Creational patterns
- 1. [Abstract Factory](https://github.com/pablopetr/design-patterns/blob/main/abstractfactory/abstractfactory.php)
+ 1. [Abstract Factory](./abstractfactory/abstractfactory.php)
  2. Builder
  3. Factory Method
  4. Prototype
- 5. [Singleton](https://github.com/pablopetr/design-patterns/blob/main/singleton/singleton.php)
+ 5. [Singleton](./singleton/singleton.php)
  
  ## Structural Patterns
  6. Adapter
