@@ -15,7 +15,7 @@ Example with implementation of the 23 main design patterns in PHP 8
  7. Bridge
  8. Composite
  9. Decorator
- 10. Facade
+ 10. [Facade](./facade/facade.php)
  11. Flyweight
  12. Proxy
 
