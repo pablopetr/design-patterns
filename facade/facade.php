@@ -10,10 +10,10 @@ class Facade {
     }
 
     public function operation(): string {
-        $result = "Facade initializes subsystems:\n";
+        $result = "Facade initialize subsystems: \n";
         $result .= $this->subsystem1->operation1();
-        $result .= $this->subsystem2->operation1();
-        $result .= "Facade orders subsystems to perform the action:\n";
+        $result .= $this->subsystem2->operation2();
+        $result .= "Facade orders subsystems to perform action:\n";
         $result .= $this->subsystem1->operationN();
         $result .= $this->subsystem2->operationZ();
 
@@ -23,7 +23,7 @@ class Facade {
 
 class Subsystem1 {
     public function operation1(): string {
-        return "Subsystem1: Ready!\n";
+        return "Subsystem1 : Ready!\n";
     }
 
     public function operationN(): string {
@@ -32,12 +32,12 @@ class Subsystem1 {
 }
 
 class Subsystem2 {
-    public function operation1(): string {
+    public function operation2(): string {
         return "Subsystem2: Get ready!\n";
     }
 
     public function operationZ(): string {
-        return "Subsystem2: Fire!\n";
+        return "Subsystem2: Fire! \n";
     }
 }
 
